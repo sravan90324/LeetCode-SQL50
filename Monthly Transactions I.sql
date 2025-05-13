@@ -1,0 +1,1 @@
+select left(trans_date,7) as month, country, count(id) as trans_count,SUM(state='approved') As approved_count,SUM(amount) as trans_total_amount, sum((state='approved')*amount) as approved_total_amount from Transactions Group by month,country;
